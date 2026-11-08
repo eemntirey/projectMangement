@@ -1,0 +1,263 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile information",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string", "maxLength": 100 },
+        "photoURL": { "type": "string", "maxLength": 500 },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "email"]
+    },
+    "Organization": {
+      "title": "Organization",
+      "description": "Workspace organization for multiple projects and members",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "maxLength": 100 },
+        "ownerId": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "name", "ownerId"]
+    },
+    "Membership": {
+      "title": "Membership",
+      "description": "Organization membership and role",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "orgId": { "type": "string" },
+        "userId": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "manager", "member", "reader"] },
+        "joinedAt": { "type": "string" }
+      },
+      "required": ["orgId", "userId", "role"]
+    },
+    "Project": {
+      "title": "Project",
+      "description": "Flexible project record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "orgId": { "type": "string" },
+        "name": { "type": "string", "maxLength": 120 },
+        "description": { "type": "string", "maxLength": 2000 },
+        "color": { "type": "string", "maxLength": 30 },
+        "startDate": { "type": "string" },
+        "endDate": { "type": "string" },
+        "status": { "type": "string", "enum": ["active", "archived", "completed", "planning"] },
+        "priority": { "type": "string", "enum": ["low", "medium", "high", "urgent"] },
+        "createdBy": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" },
+        "templateId": { "type": "string" }
+      },
+      "required": ["id", "name", "createdBy"]
+    },
+    "Workflow": {
+      "title": "Workflow",
+      "description": "Configurable workflow statuses for a project",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "projectId": { "type": "string" },
+        "name": { "type": "string", "maxLength": 100 },
+        "statuses": { "type": "array" }
+      },
+      "required": ["projectId", "statuses"]
+    },
+    "Task": {
+      "title": "Task",
+      "description": "Project task with custom fields, subtasks, dependencies",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "projectId": { "type": "string" },
+        "orgId": { "type": "string" },
+        "title": { "type": "string", "maxLength": 250 },
+        "description": { "type": "string", "maxLength": 10000 },
+        "statusId": { "type": "string" },
+        "priority": { "type": "string", "enum": ["low", "medium", "high", "urgent"] },
+        "assigneeIds": { "type": "array" },
+        "creatorId": { "type": "string" },
+        "dueDate": { "type": "string" },
+        "startDate": { "type": "string" },
+        "labels": { "type": "array" },
+        "parentTaskId": { "type": "string" },
+        "dependencyIds": { "type": "array" },
+        "customFields": { "type": "object" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" },
+        "archived": { "type": "boolean" }
+      },
+      "required": ["projectId", "title", "statusId", "creatorId"]
+    },
+    "CustomFieldDefinition": {
+      "title": "CustomFieldDefinition",
+      "description": "Definition of custom fields for project tasks",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "projectId": { "type": "string" },
+        "name": { "type": "string", "maxLength": 80 },
+        "type": { "type": "string", "enum": ["text", "textarea", "number", "date", "checkbox", "select", "multiselect", "user", "url"] },
+        "options": { "type": "array" },
+        "required": { "type": "boolean" },
+        "order": { "type": "number" }
+      },
+      "required": ["projectId", "name", "type"]
+    },
+    "SavedView": {
+      "title": "SavedView",
+      "description": "User saved views (kanban, list, calendar, dashboard)",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "projectId": { "type": "string" },
+        "userId": { "type": "string" },
+        "name": { "type": "string", "maxLength": 80 },
+        "type": { "type": "string", "enum": ["kanban", "list", "calendar", "dashboard"] },
+        "filters": { "type": "object" },
+        "sort": { "type": "object" },
+        "columns": { "type": "array" }
+      },
+      "required": ["projectId", "name", "type"]
+    },
+    "Automation": {
+      "title": "Automation",
+      "description": "No-code trigger/condition/action rule",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "projectId": { "type": "string" },
+        "name": { "type": "string", "maxLength": 120 },
+        "enabled": { "type": "boolean" },
+        "trigger": { "type": "object" },
+        "conditions": { "type": "array" },
+        "actions": { "type": "array" },
+        "createdBy": { "type": "string" }
+      },
+      "required": ["projectId", "name", "trigger", "actions"]
+    },
+    "Comment": {
+      "title": "Comment",
+      "description": "Task discussions and notes",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "taskId": { "type": "string" },
+        "projectId": { "type": "string" },
+        "userId": { "type": "string" },
+        "userDisplayName": { "type": "string" },
+        "userPhotoURL": { "type": "string" },
+        "content": { "type": "string", "maxLength": 3000 },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["taskId", "userId", "content"]
+    },
+    "ActivityLog": {
+      "title": "ActivityLog",
+      "description": "Audit trail and activity events",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "orgId": { "type": "string" },
+        "projectId": { "type": "string" },
+        "taskId": { "type": "string" },
+        "userId": { "type": "string" },
+        "action": { "type": "string", "maxLength": 100 },
+        "metadata": { "type": "object" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["action", "userId", "createdAt"]
+    },
+    "Notification": {
+      "title": "Notification",
+      "description": "In-app notifications for users",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "title": { "type": "string", "maxLength": 150 },
+        "message": { "type": "string", "maxLength": 500 },
+        "read": { "type": "boolean" },
+        "link": { "type": "string", "maxLength": 250 },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userId", "title", "message"]
+    },
+    "AiReport": {
+      "title": "AiReport",
+      "description": "Gemini generated reports and insights",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "projectId": { "type": "string" },
+        "userId": { "type": "string" },
+        "type": { "type": "string", "enum": ["status_report", "meeting_extract", "priority_suggestion"] },
+        "content": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["projectId", "userId", "type", "content"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "User profiles"
+    },
+    "/organizations/{orgId}": {
+      "schema": { "$ref": "#/entities/Organization" },
+      "description": "Organizations"
+    },
+    "/memberships/{membershipId}": {
+      "schema": { "$ref": "#/entities/Membership" },
+      "description": "Organization memberships"
+    },
+    "/projects/{projectId}": {
+      "schema": { "$ref": "#/entities/Project" },
+      "description": "Projects"
+    },
+    "/workflows/{workflowId}": {
+      "schema": { "$ref": "#/entities/Workflow" },
+      "description": "Workflows per project"
+    },
+    "/tasks/{taskId}": {
+      "schema": { "$ref": "#/entities/Task" },
+      "description": "Tasks"
+    },
+    "/customFieldDefinitions/{fieldId}": {
+      "schema": { "$ref": "#/entities/CustomFieldDefinition" },
+      "description": "Custom fields"
+    },
+    "/savedViews/{viewId}": {
+      "schema": { "$ref": "#/entities/SavedView" },
+      "description": "Saved views"
+    },
+    "/automations/{automationId}": {
+      "schema": { "$ref": "#/entities/Automation" },
+      "description": "Automations"
+    },
+    "/comments/{commentId}": {
+      "schema": { "$ref": "#/entities/Comment" },
+      "description": "Comments"
+    },
+    "/activityLogs/{logId}": {
+      "schema": { "$ref": "#/entities/ActivityLog" },
+      "description": "Activity logs"
+    },
+    "/notifications/{notifId}": {
+      "schema": { "$ref": "#/entities/Notification" },
+      "description": "Notifications"
+    },
+    "/aiReports/{reportId}": {
+      "schema": { "$ref": "#/entities/AiReport" },
+      "description": "AI reports"
+    }
+  }
+}

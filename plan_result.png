@@ -1,0 +1,283 @@
+- generic [ref=e3]:
+  - banner [ref=e7]:
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - generic [ref=e10]: FF
+        - generic [ref=e12]:
+          - heading "FlexiFlow" [level=1] [ref=e13]
+          - generic [ref=e14]: Workflows Agile
+      - button "🚀 Lancement Produit v2.0" [ref=e17] [cursor=pointer]
+    - navigation [ref=e22]:
+      - button "Kanban" [ref=e23] [cursor=pointer]
+      - button "Liste" [ref=e26] [cursor=pointer]
+      - button "Calendrier" [ref=e29] [cursor=pointer]
+      - button "Dashboard" [ref=e33] [cursor=pointer]
+      - button "Webhooks" [ref=e40] [cursor=pointer]
+      - button "Automatisations" [ref=e46] [cursor=pointer]
+      - button "Workflow" [ref=e50] [cursor=pointer]
+      - button "Champs" [ref=e57] [cursor=pointer]
+      - button "Équipe" [ref=e60] [cursor=pointer]
+    - generic [ref=e67]:
+      - button "Planifier le projet" [ref=e68] [cursor=pointer]
+      - button "Assistant IA" [ref=e74] [cursor=pointer]
+      - button "Tâche" [ref=e79] [cursor=pointer]
+      - button "Inviter un membre" [ref=e82]
+      - button "Notifications" [ref=e90] [cursor=pointer]
+      - button "Changer le thème" [ref=e95]
+      - button [ref=e99] [cursor=pointer]:
+        - generic "Sophie Martin" [ref=e100]:
+          - img "Sophie Martin" [ref=e101]
+  - generic [ref=e102]:
+    - complementary [ref=e103]:
+      - generic [ref=e104]:
+        - generic [ref=e105]:
+          - generic [ref=e106]:
+            - generic [ref=e107]: Projets actifs
+            - button "Nouveau projet" [ref=e108] [cursor=pointer]
+          - generic [ref=e111]:
+            - generic [ref=e112] [cursor=pointer]:
+              - generic [ref=e113]: 🚀 Lancement Produit v2.0
+              - button "Dupliquer comme template" [ref=e117]
+            - generic [ref=e121] [cursor=pointer]:
+              - generic [ref=e122]: 🎨 Refonte Site Web Client Horizon
+              - button "Dupliquer comme template" [ref=e126]
+        - generic [ref=e130]:
+          - generic [ref=e131]: Navigation du projet
+          - generic [ref=e132]:
+            - button "Tableau Kanban" [ref=e133] [cursor=pointer]
+            - button "Vue Liste complète" [ref=e136] [cursor=pointer]
+            - button "Calendrier des jalons" [ref=e139] [cursor=pointer]
+            - button "Tableau de bord" [ref=e143] [cursor=pointer]
+            - button "Webhooks Sortants" [ref=e150] [cursor=pointer]
+            - button "Automatisations" [ref=e156] [cursor=pointer]
+            - button "Workflow & Statuts" [ref=e160] [cursor=pointer]
+            - button "Champs personnalisés" [ref=e167] [cursor=pointer]
+            - button "Membres & Rôles" [ref=e170] [cursor=pointer]
+        - generic [ref=e177]:
+          - generic [ref=e178]: Vues personnalisées
+          - generic [ref=e179]:
+            - button "Urgences & Bloquants" [ref=e180] [cursor=pointer]
+            - button "Toutes les tâches - Liste complète" [ref=e184] [cursor=pointer]
+      - generic [ref=e188]:
+        - button "Générer un plan (IA)" [ref=e189] [cursor=pointer]
+        - button "Assistant Gemini" [ref=e197] [cursor=pointer]
+        - generic [ref=e204]:
+          - generic [ref=e205]: FlexiFlow v1.0
+          - generic [ref=e206]: Google AI Studio
+    - main [ref=e207]:
+      - generic [ref=e208]:
+        - generic [ref=e209]:
+          - generic [ref=e210]:
+            - textbox "Rechercher par titre, description, étiquette..." [ref=e215]
+            - button "Vecteurs IA" [ref=e216]
+          - generic [ref=e221]:
+            - generic [ref=e222]: "Filtres :"
+            - combobox [ref=e226]:
+              - option "Toutes priorités" [selected]
+              - option "🔴 Urgent"
+              - option "🟠 Élevée"
+              - option "🔵 Moyenne"
+              - option "⚪ Basse"
+            - combobox [ref=e227]:
+              - option "Tous les membres" [selected]
+              - option "Sophie Martin"
+              - option "Alexandre Dupont"
+              - option "Léa Bernard"
+        - generic [ref=e229]:
+          - generic [ref=e230]:
+            - generic [ref=e231]:
+              - generic [ref=e232]:
+                - heading "À faire" [level=3] [ref=e234]
+                - generic [ref=e235]: "2"
+              - generic [ref=e236]: 28h
+            - generic [ref=e237]:
+              - generic [ref=e238] [cursor=pointer]:
+                - generic [ref=e239]: Moyenne
+                - heading "Conception de la campagne d'emailing pour les 5 000 bêta-testeurs" [level=4] [ref=e246]
+                - generic [ref=e247]:
+                  - generic [ref=e248]: "#Marketing"
+                  - generic [ref=e249]: "#Copywriting"
+                - generic [ref=e250]: "Impact Business: Moyen"
+                - generic [ref=e252]:
+                  - generic [ref=e253]:
+                    - generic [ref=e254]: Nov 20
+                    - generic [ref=e257]: 0/2
+                  - generic "Léa Bernard" [ref=e262]:
+                    - img "Léa Bernard" [ref=e263]
+              - generic [ref=e264] [cursor=pointer]:
+                - generic [ref=e265]:
+                  - generic [ref=e266]: Moyenne
+                  - generic "Tâche dépendante d'autres tâches" [ref=e272]: Bloqué
+                - heading "Tournage de la vidéo démo produit pour Product Hunt & LinkedIn" [level=4] [ref=e276]
+                - generic [ref=e277]:
+                  - generic [ref=e278]: "#Marketing"
+                  - generic [ref=e279]: "#Vidéo"
+                - generic [ref=e280]: "Impact Business: Majeur"
+                - generic [ref=e282]:
+                  - generic [ref=e283]: Nov 25
+                  - generic [ref=e287]:
+                    - generic "Sophie Martin" [ref=e288]:
+                      - img "Sophie Martin" [ref=e289]
+                    - generic "Léa Bernard" [ref=e290]:
+                      - img "Léa Bernard" [ref=e291]
+              - button "Ajouter une tâche" [ref=e292] [cursor=pointer]
+          - generic [ref=e294]:
+            - generic [ref=e295]:
+              - generic [ref=e296]:
+                - heading "En cours" [level=3] [ref=e298]
+                - generic [ref=e299]: "2"
+              - generic [ref=e300]: 24h
+            - generic [ref=e301]:
+              - generic [ref=e302] [cursor=pointer]:
+                - generic [ref=e303]: Urgent
+                - heading "Finaliser l'intégration du paiement Stripe et gestion des abonnements" [level=4] [ref=e309]
+                - generic [ref=e310]:
+                  - generic [ref=e311]: "#Billing"
+                  - generic [ref=e312]: "#Sécurité"
+                  - generic [ref=e313]: "#Backend"
+                - generic [ref=e314]:
+                  - generic [ref=e315]: "Environnement Cible: Production"
+                  - generic [ref=e316]: "Impact Business: Critique"
+                - generic [ref=e317]:
+                  - generic [ref=e318]:
+                    - generic [ref=e319]: Nov 14
+                    - generic [ref=e322]: 2/3
+                  - generic "Alexandre Dupont" [ref=e327]:
+                    - img "Alexandre Dupont" [ref=e328]
+              - generic [ref=e329] [cursor=pointer]:
+                - generic [ref=e330]: Élevée
+                - heading "Optimisation du responsive design sur tablettes et mobiles" [level=4] [ref=e336]
+                - generic [ref=e337]:
+                  - generic [ref=e338]: "#Frontend"
+                  - generic [ref=e339]: "#UI/UX"
+                  - generic [ref=e340]: "#Mobile"
+                - generic [ref=e341]:
+                  - generic [ref=e342]: "Environnement Cible: Staging"
+                  - generic [ref=e343]: "Impact Business: Moyen"
+                - generic [ref=e344]:
+                  - generic [ref=e345]:
+                    - generic [ref=e346]: Nov 18
+                    - generic [ref=e349]: 1/2
+                  - generic "Léa Bernard" [ref=e354]:
+                    - img "Léa Bernard" [ref=e355]
+              - button "Ajouter une tâche" [ref=e356] [cursor=pointer]
+          - generic [ref=e358]:
+            - generic [ref=e359]:
+              - generic [ref=e360]:
+                - heading "En revue" [level=3] [ref=e362]
+                - generic [ref=e363]: "1"
+              - generic [ref=e364]: 12h
+            - generic [ref=e365]:
+              - generic [ref=e366] [cursor=pointer]:
+                - generic [ref=e367]:
+                  - generic [ref=e368]: Élevée
+                  - generic "Tâche dépendante d'autres tâches" [ref=e373]: Bloqué
+                - heading "Audit de sécurité & tests de pénétration OWASP" [level=4] [ref=e377]
+                - generic [ref=e378]:
+                  - generic [ref=e379]: "#Sécurité"
+                  - generic [ref=e380]: "#Audit"
+                  - generic [ref=e381]: "#DevOps"
+                - generic [ref=e382]:
+                  - generic [ref=e383]: "Environnement Cible: Staging"
+                  - generic [ref=e384]: "Impact Business: Critique"
+                - generic [ref=e385]:
+                  - generic [ref=e386]:
+                    - generic [ref=e387]: Nov 16
+                    - generic [ref=e390]: 2/3
+                  - generic "Sophie Martin" [ref=e395]:
+                    - img "Sophie Martin" [ref=e396]
+              - button "Ajouter une tâche" [ref=e397] [cursor=pointer]
+          - generic [ref=e399]:
+            - generic [ref=e400]:
+              - generic [ref=e401]:
+                - heading "Bloqué" [level=3] [ref=e403]
+                - generic [ref=e404]: "1"
+              - generic [ref=e405]: 14h
+            - generic [ref=e406]:
+              - generic [ref=e407] [cursor=pointer]:
+                - generic [ref=e408]: Urgent
+                - 'heading "API Gateway : Résoudre la latence anormale sur le endpoint /analytics" [level=4] [ref=e414]'
+                - generic [ref=e415]:
+                  - generic [ref=e416]: "#Performance"
+                  - generic [ref=e417]: "#Bug"
+                  - generic [ref=e418]: "#Backend"
+                - generic [ref=e419]:
+                  - generic [ref=e420]: "Environnement Cible: Production"
+                  - generic [ref=e421]: "Impact Business: Majeur"
+                - generic [ref=e422]:
+                  - generic [ref=e423]:
+                    - generic [ref=e424]: Nov 10
+                    - generic [ref=e427]: 1/2
+                  - generic [ref=e431]:
+                    - generic "Alexandre Dupont" [ref=e432]:
+                      - img "Alexandre Dupont" [ref=e433]
+                    - generic "Sophie Martin" [ref=e434]:
+                      - img "Sophie Martin" [ref=e435]
+              - button "Ajouter une tâche" [ref=e436] [cursor=pointer]
+          - generic [ref=e438]:
+            - generic [ref=e439]:
+              - generic [ref=e440]:
+                - heading "Terminé" [level=3] [ref=e442]
+                - generic [ref=e443]: "2"
+              - generic [ref=e444]: 16h
+            - generic [ref=e445]:
+              - generic [ref=e446] [cursor=pointer]:
+                - generic [ref=e447]: Moyenne
+                - heading "Mise en place de la documentation API publique (Swagger / OpenAPI)" [level=4] [ref=e454]
+                - generic [ref=e455]:
+                  - generic [ref=e456]: "#Docs"
+                  - generic [ref=e457]: "#API"
+                - generic [ref=e458]:
+                  - generic [ref=e459]: "Environnement Cible: Tous"
+                  - generic [ref=e460]: "Impact Business: Moyen"
+                - generic [ref=e461]:
+                  - generic [ref=e462]:
+                    - generic [ref=e463]: Nov 5
+                    - generic [ref=e466]: 2/2
+                  - generic "Léa Bernard" [ref=e471]:
+                    - img "Léa Bernard" [ref=e472]
+              - generic [ref=e473] [cursor=pointer]:
+                - generic [ref=e474]: Élevée
+                - heading "Configuration du monitoring temps réel (Sentry & Datadog)" [level=4] [ref=e480]
+                - generic [ref=e481]:
+                  - generic [ref=e482]: "#DevOps"
+                  - generic [ref=e483]: "#Monitoring"
+                - generic [ref=e484]:
+                  - generic [ref=e485]: "Environnement Cible: Production"
+                  - generic [ref=e486]: "Impact Business: Majeur"
+                - generic [ref=e487]:
+                  - generic [ref=e488]:
+                    - generic [ref=e489]: Nov 4
+                    - generic [ref=e492]: 2/2
+                  - generic "Alexandre Dupont" [ref=e497]:
+                    - img "Alexandre Dupont" [ref=e498]
+              - button "Ajouter une tâche" [ref=e499] [cursor=pointer]
+  - generic [ref=e502]:
+    - generic [ref=e503]:
+      - generic [ref=e508]:
+        - heading "Agent IA de Planification Autonome Gemini 3.8 Flash" [level=2] [ref=e509]:
+          - text: Agent IA de Planification Autonome
+          - generic [ref=e510]: Gemini 3.8 Flash
+        - paragraph [ref=e511]: Générez un WBS structuré (Work Breakdown Structure) avec jalons, estimations et dépendances pour « 🚀 Lancement Produit v2.0 ».
+      - button [ref=e512]
+    - generic [ref=e516]:
+      - generic [ref=e517]:
+        - generic [ref=e518]: Objectif principal du projet *
+        - 'textbox "ex: Lancer la v2.0 du produit avec facturation Stripe" [ref=e519]': Lancer la v2.0 du produit avec architecture microservices, paiements Stripe et tests de charge
+      - generic [ref=e520]:
+        - generic [ref=e521]: Contexte & exigences particulières (optionnel)
+        - textbox "Détails techniques, livrables attendus, contraintes de sécurité ou de conformité..." [ref=e522]: "Objectif majeur du Q4 : refonte des APIs de facturation, onboarding simplifié et monitoring Datadog."
+      - generic [ref=e523]:
+        - generic [ref=e524]:
+          - generic [ref=e525]: Durée cible / Échéance
+          - 'textbox "ex: 4 semaines, Fin du trimestre, Sprint de 15 jours" [ref=e526]': 4 semaines
+        - generic [ref=e527]:
+          - generic [ref=e528]: Membres disponibles pour l'assignation
+          - generic [ref=e529]:
+            - button "Sophie Martin" [ref=e530]
+            - button "Alexandre Dupont" [ref=e531]
+            - button "Léa Bernard" [ref=e532]
+      - generic [ref=e533]: "Fonctionnement autonome par Function Calling : L'agent IA utilise le schéma standardisé de FlexiFlow pour déduire les phases logiques, assigner la personne la plus compétente selon son profil, estimer les charges en heures et chaîner les dépendances techniques (ex: API terminée avant tests frontend)."
+    - generic [ref=e538]:
+      - button "Fermer" [ref=e539]
+      - button "Génération autonome en cours..." [disabled] [ref=e543]

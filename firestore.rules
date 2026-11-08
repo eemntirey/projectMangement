@@ -1,0 +1,138 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Default deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null || request.time != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // Users collection
+    match /users/{userId} {
+      allow read: if isSignedIn();
+      allow create: if isOwner(userId)
+        && request.resource.data.uid == userId
+        && request.resource.data.email is string
+        && request.resource.data.email.size() <= 150;
+      allow update: if isOwner(userId)
+        && request.resource.data.uid == userId;
+      allow delete: if false;
+    }
+
+    // Organizations collection
+    match /organizations/{orgId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn()
+        && request.resource.data.ownerId == request.auth.uid
+        && request.resource.data.name is string
+        && request.resource.data.name.size() <= 100;
+      allow update: if isSignedIn();
+      allow delete: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+    }
+
+    // Memberships collection
+    match /memberships/{membershipId} {
+      allow read: if isSignedIn();
+      allow write: if isSignedIn();
+    }
+
+    // Projects collection
+    match /projects/{projectId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn()
+        && request.resource.data.createdBy == request.auth.uid
+        && request.resource.data.name is string
+        && request.resource.data.name.size() <= 120;
+      allow update: if isSignedIn();
+      allow delete: if isSignedIn() && resource.data.createdBy == request.auth.uid;
+    }
+
+    // Workflows collection
+    match /workflows/{workflowId} {
+      allow read: if isSignedIn();
+      allow write: if isSignedIn();
+    }
+
+    // Tasks collection
+    match /tasks/{taskId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn()
+        && request.resource.data.title is string
+        && request.resource.data.title.size() <= 250;
+      allow update: if isSignedIn();
+      allow delete: if isSignedIn();
+    }
+
+    // Custom Field Definitions
+    match /customFieldDefinitions/{fieldId} {
+      allow read: if isSignedIn();
+      allow write: if isSignedIn();
+    }
+
+    // Saved Views
+    match /savedViews/{viewId} {
+      allow read: if isSignedIn();
+      allow write: if isSignedIn();
+    }
+
+    // Automations
+    match /automations/{automationId} {
+      allow read: if isSignedIn();
+      allow write: if isSignedIn();
+    }
+
+    // Comments
+    match /comments/{commentId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if isSignedIn() && resource.data.userId == request.auth.uid;
+    }
+
+    // Activity Logs
+    match /activityLogs/{logId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn();
+      allow update, delete: if false;
+    }
+
+    // Notifications
+    match /notifications/{notifId} {
+      allow read: if isSignedIn() && resource.data.userId == request.auth.uid;
+      allow create: if isSignedIn();
+      allow update: if isSignedIn() && resource.data.userId == request.auth.uid;
+      allow delete: if isSignedIn() && resource.data.userId == request.auth.uid;
+    }
+
+    // AI Reports
+    match /aiReports/{reportId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn();
+      allow update, delete: if isSignedIn();
+    }
+
+    // Webhooks collection
+    match /webhooks/{webhookId} {
+      allow read: if isSignedIn();
+      allow write: if isSignedIn();
+    }
+
+    // Webhook Delivery Logs
+    match /webhookLogs/{logId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn();
+      allow update, delete: if isSignedIn();
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "FlexiFlow",
+  "description": "Plateforme ultra-flexible de gestion de projet avec workflows personnalisables, statuts modulaires, champs sur-mesure, automatisations no-code et assistant IA Gemini.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
